@@ -32,55 +32,54 @@ minetest.register_craft({
 })
 -- Tools
 minetest.register_tool("goldtools:goldpick", {
-	image = "gold_pick.png",
-	basetime = 1.0,
-	dt_weight = 0,
-	dt_crackiness = -0.5,
-	dt_crumbliness = 2,
-	dt_cuttability = 0,
-	basedurability = 333,
-	dd_weight = 0,
-	dd_crackiness = 0,
-	dd_crumbliness = 0,
-	dd_cuttability = 0,
+	description = "Gold Pickaxe",
+	inventory_image = "gold_pick.png",
+	tool_capabilities = {
+		full_punch_interval = 1,
+		max_drop_level=3,
+		groupcaps={
+			cracky = {times={[1]=2.5, [2]=1.3, [3]=0.70}, uses=10, maxlevel=3},
+		},
+		damage_groups = {fleshy=5},
+	},
+	sound = {breaks = "default_tool_breaks"},
 })
 minetest.register_tool("goldtools:goldshovel", {
-	image = "gold_shovel.png",
-	basetime = 1.0,
-	dt_weight = 0.5,
-	dt_crackiness = 2,
-	dt_crumbliness = -1.5,
-	dt_cuttability = 0.0,
-	basedurability = 330,
-	dd_weight = 0,
-	dd_crackiness = 0,
-	dd_crumbliness = 0,
-	dd_cuttability = 0,
+	description = "Gold Shovel",
+	inventory_image = "gold_shovel.png",
+	tool_capabilities = {
+		full_punch_interval = 1.0,
+		max_drop_level=3,
+		groupcaps={
+			crumbly = {times={[1]=1.10, [2]=0.50, [3]=0.20}, uses=10, maxlevel=3},
+		},
+		damage_groups = {fleshy=4},
+	},
+	sound = {breaks = "default_tool_breaks"},
 })
 minetest.register_tool("goldtools:goldaxe", {
-	image = "gold_axe.png",
-	basetime = 1.0,
-	dt_weight = 0.5,
-	dt_crackiness = -0.2,
-	dt_crumbliness = 1,
-	dt_cuttability = -0.5,
-	basedurability = 330,
-	dd_weight = 0,
-	dd_crackiness = 0,
-	dd_crumbliness = 0,
-	dd_cuttability = 0,
+	description = "Gold Axe",
+	inventory_image = "gold_axe.png",
+	tool_capabilities = {
+		full_punch_interval = 1.0,
+		max_drop_level=1,
+		groupcaps={
+			choppy={times={[1]=2.10, [2]=0.90, [3]=0.50}, uses=10, maxlevel=3},
+		},
+		damage_groups = {fleshy=6},
+	},
+	sound = {breaks = "default_tool_breaks"},
 })
 minetest.register_tool("goldtools:goldsword", {
-	image = "gold_sword.png",
-	basetime = 2.0,
-	dt_weight = 3,
-	dt_crackiness = 0,
-	dt_crumbliness = 1,
-	dt_cuttability = -1,
-	basedurability = 330,
-	dd_weight = 0,
-	dd_crackiness = 0,
-	dd_crumbliness = 0,
-	dd_cuttability = 0,
+	description = "Gold Sword",
+	inventory_image = "gold_sword.png",
+	tool_capabilities = {
+		full_punch_interval = 0.9,
+		max_drop_level=1,
+		groupcaps={
+			snappy={times={[1]=1.9, [2]=0.90, [3]=0.25}, uses=15, maxlevel=3},
+		},
+		damage_groups = {fleshy=8},
+	},
+	sound = {breaks = "default_tool_breaks"},
 })
-print("[GoldTools by ManElevation] Loaded!" )
